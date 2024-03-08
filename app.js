@@ -260,8 +260,8 @@ define(function(require) {
                     
 			var activeStorageId = null;
 			try {
-//				activeStorageId = data.plan.modb.connection; //.handler;
-				activeStorageId = data.plan.modb.types.call_recording.connection; //.handler;
+				activeStorageId = data.plan.modb.connection; //.handler;
+//				activeStorageId = data.plan.modb.types.call_recording.connection; //.handler;
                                 
 			} catch(e) {
 				log('Active storage not found');
