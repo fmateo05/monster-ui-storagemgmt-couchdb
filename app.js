@@ -1,7 +1,6 @@
 define(function(require) {
 	var $ = require('jquery'),
 		monster = require('monster'),
-                _ = require('lodash'), // nueva
 		toastr = require('toastr'),
 		storagesConfig = require('./storages');
 
@@ -261,7 +260,8 @@ define(function(require) {
                     
 			var activeStorageId = null;
 			try {
-				activeStorageId = data.plan.modb.types.call_recording.connections; //.handler;
+//				activeStorageId = data.plan.modb.connection; //.handler;
+				activeStorageId = data.plan.modb.types.call_recording.connection; //.handler;
                                 
 			} catch(e) {
 				log('Active storage not found');
@@ -518,18 +518,19 @@ define(function(require) {
 			var newData = {
 				plan: {
 					modb: {
-                                            connection: uuid ,
 						types: {
 							call_recording: {
 								database:{
 								create_options:{}	
-                                                                }
+                                                                },
+                                            			connection: uuid 
 							},
 							mailbox_message: {
 								
                                                                 database:{
 								create_options:{}	
-                                                                }
+                                                                },
+                                            			connection: uuid 
 							}
 						}
 					}
@@ -609,22 +610,24 @@ define(function(require) {
 				if(storagesData.hasOwnProperty('plan')) {
 					resultData.plan = storagesData.plan;
 				}
-
 				if(resultData.connections && resultData.connections.hasOwnProperty(uuid)) {
+               				resultData.attachments = {};
 					delete resultData.connections[uuid];
 				}
-
 				try {
-					if(resultData.plan.modb.types.call_recording.connections === uuid) {
+						if(resultData.plan.modb.types.call_recording.connection === uuid) {
 						resultData.plan = {};
+					//
 					}
 				} catch (e) {}
+
 
 				self.storageManagerUpdateStorage(resultData, function() {
 					if(typeof(callback) === 'function') {
 						callback();
 					}
 				});
+				
 			})
 		},
 
