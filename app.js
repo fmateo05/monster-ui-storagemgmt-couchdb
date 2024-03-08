@@ -92,7 +92,7 @@ define(function(require) {
 
 				if (submoduleLanguages.length && submoduleLanguages.length > 0) {
 					if(submoduleLanguages.indexOf(curLanguage) > -1) {
-						$.getJSON('/apps/storagemgmt/submodules/' + args.submoduleName + '/i18n/' + curLanguage  + '.json').done(function (newDict) {
+						$.getJSON('/apps/storagemgmt-couchdb/submodules/' + args.submoduleName + '/i18n/' + curLanguage  + '.json').done(function (newDict) {
 							var dict = self.data.i18n[curLanguage];
 							$.extend(true, dict, newDict);
 						});
