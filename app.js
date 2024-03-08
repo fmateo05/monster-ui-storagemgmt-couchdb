@@ -518,19 +518,18 @@ define(function(require) {
 			var newData = {
 				plan: {
 					modb: {
+                                	connection: uuid ,  
 						types: {
 							call_recording: {
 								database:{
 								create_options:{}	
-                                                                },
-                                            			connection: uuid 
+                                                                }
 							},
 							mailbox_message: {
 								
                                                                 database:{
 								create_options:{}	
-                                                                },
-                                            			connection: uuid 
+                                                                }
 							}
 						}
 					}
