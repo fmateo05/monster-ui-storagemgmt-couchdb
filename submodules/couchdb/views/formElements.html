@@ -1,0 +1,32 @@
+<input type="hidden" name="driver" value="kazoo_couch"/>
+<label class="control-group">
+	<span class="control-label">{{ @root.i18n.storagemgmt.submodules.couchdb.nameLabel }}</span>
+	<div class="controls">
+		<input type="text" value="{{name}}" name="name">
+	</div>
+</label>
+<label class="control-group">
+	<span class="control-label">{{ @root.i18n.storagemgmt.submodules.couchdb.bucketLabel }}</span>
+	<div class="controls">
+		<input type="text" value="{{settings.ip}}" name="settings.ip">
+	</div>
+</label>
+<label class="control-group">
+	<span class="control-label">{{ @root.i18n.storagemgmt.submodules.couchdb.portLabel }}</span>
+	<div class="controls">
+                
+		<input type="number" value="{{settings.port}}" name="settings.port">
+	</div>
+</label>
+<label class="control-group">
+	<span class="control-label">{{ @root.i18n.storagemgmt.submodules.couchdb.keyLabel }}</span>
+	<div class="controls">
+		<input type="text" value="{{settings.username}}" name="settings.username">
+	</div>
+</label>
+<label class="control-group">
+	<span class="control-label">{{ @root.i18n.storagemgmt.submodules.couchdb.secretLabel }}</span>
+	<div class="controls">
+		<input type="password" value="{{settings.password}}" name="settings.password">
+	</div>
+</label>

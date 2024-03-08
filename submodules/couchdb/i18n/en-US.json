@@ -1,0 +1,13 @@
+{
+	"storagemgmt": {
+		"submodules": {
+			"couchdb": {
+				"nameLabel": "Name",
+				"bucketLabel": "IP",
+                                "portLabel": "Port",
+				"keyLabel": "Username",
+				"secretLabel": "Password"
+			}
+		}
+	}
+}
